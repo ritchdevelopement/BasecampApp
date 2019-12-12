@@ -1,0 +1,225 @@
+:root {
+    --bc-green: #66bb6a;
+}
+
+/*==============================
+=            HEADER            =
+===============================*/
+
+.company {
+    font-size: 12px;
+}
+
+/*=====  End of HEADER  ======*/
+
+/*===============================
+=            MAIN            =
+================================*/
+
+.uk-table td {
+    padding: 10px 12px;
+    vertical-align: top;
+}
+
+.logo.loading {
+    animation: loading 3s linear infinite;
+}
+
+input.uk-search-input {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+input.uk-search-input::placeholder {
+    font-size: 16px;
+    font-weight: bold;
+    color: #b7b7b7;
+}
+
+.uk-table-hover tbody tr:hover {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+.uk-notification-message-success {
+    background-color: var(--bc-green);
+    color: #fff;
+}
+
+.uk-text-success {
+    color: var(--bc-green) !important;
+}
+
+.uk-alert-close {
+    opacity: 1;
+}
+
+/*----------  TODO ITEMS  ----------*/
+
+.todo-items-container .todo-item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.todo-item {
+    position: relative;
+}
+ 
+.todo-item.tracked span {
+    background-color: var(--bc-green);
+    border-radius: 5px;
+    padding: 3px 6px;
+    color: #fff;
+}
+
+.todo-item .add-to-timer-button {
+    right: 0;
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+    background-color: #909090;
+    color: #fff;
+}
+
+.uk-table-hover tbody tr:hover .todo-item .add-to-timer-button {
+    opacity: 1;
+    visibility: visible;
+    width: 25px;
+    height: 25px;
+}
+
+.todo-item.tracked .add-to-timer-button {
+    background-color: var(--bc-green);
+}
+
+.todo-item .add-to-timer-button:hover {
+    background-color: var(--bc-green);
+}
+
+/*----------  TIME TRACKER  ----------*/
+
+.timers-container {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+}
+
+.timers-button .uk-icon-button {
+    background-color: #909090;
+    color: #fff;
+    height: 60px;
+    width: 60px; 
+    border-radius: 50%;
+}
+
+.timers-button .uk-icon-button:hover,
+.timers-button.active .uk-icon-button {
+    background-color: var(--bc-green);
+}
+
+.timers-button.active .uk-icon-button:hover {
+    background-color: #3b6f3e;
+}
+
+.timers-button.active.tracking .uk-icon-button {
+    animation: heartbeat 1s ease-in-out infinite reverse ;
+}
+
+/*=====  End of MAIN  ======*/
+
+ 
+/*----------  TIMERS  ----------*/
+ 
+.timers {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    border: 1px solid #66bb6a33;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.timers .uk-card-badge {
+    background-color: var(--bc-green);
+    top: 15px;
+    right: 15px;
+}
+
+.timers .uk-card-header {
+    border-color: #66bb6a33;
+}
+
+.timers .project {
+    color: var(--bc-green);
+}
+
+.timers .uk-card-footer {
+    border-color: #66bb6a33;
+}
+
+.timers .play-button {
+    background-color: #d8d8d8;
+}
+
+.timers .play-button:hover {
+    color: #fff;
+}
+
+.timers .play-button.playing {
+    background-color: #66bb6a;
+    color: #fff;
+}
+
+.timers .play-button.playing:hover {
+    background-color: #457c48;
+    color: #fff;
+}
+
+.timers .remove-button {
+    background-color: #f0506e;
+    color: #fff;
+}
+
+.timers .remove-button:hover {
+    background-color: #b1334b;
+}
+
+.uk-table td.todo-item-timer-time {
+    vertical-align: middle;
+    font-weight: 500
+}
+
+.timers.hide {
+    display: none;
+}
+
+.timers .save-button {
+    background-color: #6674a7;
+    color: #fff;
+}
+
+.timers .save-button:hover {
+    background-color: #464f6f;
+}
+
+.dialog-widget.prompt .ok {
+    color: #fff;
+    background-color: var(--bc-green);
+    cursor: pointer;
+}
+
+.dialog-widget.prompt .cancel {
+    color: #222;
+    cursor: pointer;
+}
+
+/*=================================
+=            ANIMATION            =
+==================================*/
+
+@keyframes loading {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/*=====  End of ANIMATION  ======*/

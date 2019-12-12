@@ -1,0 +1,33 @@
+{
+  "name": "basecampapp",
+  "version": "1.0.0",
+  "description": "Basecamp app for classic version",
+  "main": "dist/App.js",
+  "scripts": {
+    "copyHtml": "cp -r ./src/views ./dist",
+    "copyAssets": "cp -r ./src/assets ./dist",
+    "concatControllers": "gulp concat",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "start": "npm run copyHtml && npm run copyAssets && npm run build && npm run concatControllers && electron ."
+  },
+  "author": "Rami El Kudr",
+  "license": "MIT",
+  "dependencies": {
+    "@types/xml2js": "^0.4.5",
+    "dialogs": "^2.0.1",
+    "electron": "^7.1.0",
+    "electron-fetch": "^1.3.0",
+    "electron-store": "^5.1.0",
+    "gulp": "^4.0.2",
+    "keytar": "^4.13.0",
+    "xml2js": "^0.4.22"
+  },
+  "devDependencies": {
+    "electron-rebuild": "^1.8.6",
+    "gulp-concat": "^2.6.1",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.2"
+  }
+}

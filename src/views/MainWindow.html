@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BasecampApp</title>
+    <link rel="stylesheet" href="../assets/css/uikit.min.css" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script src="../assets/js/uikit.min.js"></script>
+    <script src="../assets/js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="uk-padding-small uk-background-secondary uk-light" uk-navbar>
+                <div class="uk-navbar-left">
+                    <span>You are logged in as:&nbsp;</span><span class="uk-text-success" id="account-name"></span>
+                </div>
+                <div class="uk-navbar-center">
+                    <div class="uk-navbar-item uk-logo"><img id="logo" class="logo loading"
+                            src="../assets/images/basecamp-logo.png" width="45"></div>
+                </div>
+                <div class="uk-navbar-right">
+                    <a class="uk-icon-button" href="#settings-modal" uk-icon="settings"
+                        uk-tooltip="title: Settings; pos: bottom-center" uk-toggle></a>
+                    <div id="settings-modal" class="uk-flex-top" uk-modal="bg-close: false">
+                        <div
+                            class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical uk-background-secondary uk-light">
+                            <button class="uk-modal-close-default" type="button" uk-close></button>
+                            <form id="settings-form">
+                                <div class="uk-modal-header uk-padding-remove-horizontal uk-background-secondary">
+                                    <h2 class="uk-modal-title">Settings</h2>
+                                </div>
+                                <div class="uk-modal-body uk-padding-remove-horizontal uk-background-secondary">
+                                    <div class="uk-margin">
+                                        <div class="uk-width-1-1 uk-inline">
+                                            <span class="uk-form-icon" href="#" uk-icon="icon: link"></span>
+                                            <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: info"
+                                                uk-tooltip="title: Example: https://{company}.basecamphq.com/; pos: top-right"></a>
+                                            <input id="settings-basecamp-url" class="uk-input" type="url"
+                                                placeholder="Basecamp URL" required>
+                                        </div>
+                                    </div>
+                                    <div class="uk-margin">
+                                        <div class="uk-width-1-1 uk-inline">
+                                            <span class="uk-form-icon" href="#" uk-icon="icon: user"></span>
+                                            <input id="settings-username" class="uk-input" type="text"
+                                                placeholder="Username" required>
+                                        </div>
+                                    </div>
+                                    <div class="uk-margin">
+                                        <div class="uk-width-1-1 uk-inline">
+                                            <span class="uk-form-icon" href="#" uk-icon="icon: lock"></span>
+                                            <input id="settings-password" class="uk-input" type="password"
+                                                placeholder="Password" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="uk-modal-footer uk-text-right uk-padding-remove-horizontal uk-background-secondary">
+                                    <button class="uk-button uk-button-default uk-modal-close"
+                                        type="button">Cancel</button>
+                                    <button id="settings-submit-button" class="uk-button uk-button-primary"
+                                        type="submit"
+                                        onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Settings saved', pos: 'top-right', status:'success'})">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="uk-padding-small uk-margin-large-bottom uk-description-list uk-description-list-divider">
+            <table id="list-data-table" class="uk-table uk-table-divider uk-table-hover">
+                <thead class="uk-box-shadow-small">
+                    <tr>
+                        <th>
+                            <div>
+                                <span class="uk-search uk-search-default uk-width-1-1">
+                                    <span uk-search-icon></span>
+                                    <input id="search-project" class="uk-search-input" type="search"
+                                        placeholder="Search company or project">
+                                </span>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <span class="uk-search uk-search-default uk-width-1-1">
+                                    <span uk-search-icon></span>
+                                    <input id="search-todo-list" class="uk-search-input" type="search"
+                                        placeholder="Search todo list">
+                                </span>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <span class="uk-search uk-search-default uk-width-1-1">
+                                    <span uk-search-icon></span>
+                                    <input id="search-todo-item" class="uk-search-input" type="search"
+                                        placeholder="Search todo item">
+                                </span>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="todo-lists-container">
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <div id="timers-container" class="timers-container">
+        <div id="timers" class="uk-card uk-card-default uk-width-xlarge uk-box-shadow-xlarge timers hide">
+            <div class="uk-card-header uk-padding-small">
+                <h4 class="uk-card-title uk-margin-remove-bottom">Timers</h4>
+            </div>
+            <div class="uk-card-body uk-padding-small">
+                <table class="uk-table">
+                    <tbody id="timers-list">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="timers-button" class="timers-button"><a class="uk-icon-button" uk-icon="icon: clock; ratio: 2"></a>
+        </div>
+    </div>
+    <div id="loading-screen" class="uk-overlay-primary uk-position-cover"></div>
+    <script>var exports = { "__esModule": true }; </script>
+    <script src="../controllers/Controllers.js"></script>
+</body>
+
+</html>
