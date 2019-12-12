@@ -1,2 +1,2 @@
 # BasecampApp
-Basecamp app created with the electron framework
+Basecamp classic app created with the electron framework
