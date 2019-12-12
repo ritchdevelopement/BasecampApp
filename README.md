@@ -1,2 +1,2 @@
 # BasecampApp
-Basecamp classic app created with the electron framework
+Basecamp classic time tracking app created with the electron framework
